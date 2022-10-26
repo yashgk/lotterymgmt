@@ -23,13 +23,6 @@ class _LoginModuleState extends State<LoginModule> {
 
   bool hidePassword = true;
 
-  OutlineInputBorder standardBorder = OutlineInputBorder(
-    borderRadius: BorderRadius.circular(AppDimensions.standardBorder),
-    borderSide: const BorderSide(
-      color: AppColors.primaryColor,
-    ),
-  );
-
   @override
   Widget build(BuildContext context) {
     return Card(

@@ -18,7 +18,6 @@ class HomePage extends StatefulWidget {
 
 class _HomePageState extends State<HomePage> {
   int selectedDestIndex = 0;
-  bool extendNavRail = false;
   PageController contentController = PageController(initialPage: 0);
 
   List<Widget> contentScreenList = const [
@@ -42,11 +41,11 @@ class _HomePageState extends State<HomePage> {
             GestureDetector(
               onTap: () {},
               child: SizedBox(
-                width: size!.width * 0.05,
+                width: AppDimensions.sizeHundred,
                 child: Row(
                   children: [
                     const Text(
-                      "Jhon",
+                      "Jon",
                       style: AppTextStyle.mediumText,
                     ),
                     hBox(AppDimensions.sizeFive),
@@ -67,6 +66,7 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
         body: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             NavigationRail(
               destinations: const [
@@ -98,34 +98,38 @@ class _HomePageState extends State<HomePage> {
               ],
               selectedIndex: selectedDestIndex,
               onDestinationSelected: changeDestIndex,
-              labelType: NavigationRailLabelType.none,
+              labelType: NavigationRailLabelType.all,
               selectedLabelTextStyle: AppTextStyle.mediumText
                   .copyWith(color: AppColors.primaryColor),
               elevation: AppDimensions.sizeFive,
-              extended: extendNavRail,
-              minExtendedWidth: size!.width * 0.12,
-              leading: GestureDetector(
-                onTap: () {
-                  setState(() {
-                    extendNavRail = !extendNavRail;
-                  });
-                },
-                child: Container(
-                  decoration: const BoxDecoration(
-                      color: AppColors.primaryColor, shape: BoxShape.circle),
-                  padding: const EdgeInsets.all(AppDimensions.sizeFive),
-                  child: Icon(
-                    extendNavRail
-                        ? Icons.arrow_back_ios_new_outlined
-                        : Icons.arrow_forward_ios_outlined,
-                    color: AppColors.whiteColor,
-                    size: AppDimensions.sizeTen,
-                  ),
-                ),
-              ),
+              // extended: extendNavRail,
+              // minExtendedWidth: 200,
+              // leading: GestureDetector(
+              //   onTap: () {
+              //     setState(() {
+              //       extendNavRail = !extendNavRail;
+              //     });
+              //   },
+              //   child: Container(
+              //     decoration: const BoxDecoration(
+              //         color: AppColors.primaryColor, shape: BoxShape.circle),
+              //     padding: const EdgeInsets.all(AppDimensions.sizeFive),
+              //     child: Icon(
+              //       extendNavRail
+              //           ? Icons.arrow_back_ios_new_outlined
+              //           : Icons.arrow_forward_ios_outlined,
+              //       color: AppColors.whiteColor,
+              //       size: AppDimensions.sizeTen,
+              //     ),
+              //   ),
+              // ),
             ),
-            const SizedBox(),
-            Expanded(child: contentScreenList[selectedDestIndex])
+            Container(
+                height: size!.height,
+                width: size!.width - 100,
+                padding: const EdgeInsets.all(AppDimensions.sizeTen),
+                alignment: Alignment.center,
+                child: contentScreenList[selectedDestIndex]),
           ],
         ));
   }

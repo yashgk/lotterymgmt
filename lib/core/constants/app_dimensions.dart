@@ -1,5 +1,3 @@
-
-
 class AppDimensions {
   static const double standardBorder = 8.0;
   static const double sizeZero = 0.0;
@@ -21,4 +19,11 @@ class AppDimensions {
   static const double sizeFiftyFive = 55.0;
   static const double sizeSixty = 60.0;
   static const double sizeSixtyFive = 65.0;
+  static const double sizeSeventy = 70.0;
+  static const double sizeSeventyFive = 75.0;
+  static const double sizeEighty = 80.0;
+  static const double sizeEightyFive = 85.0;
+  static const double sizeNinety = 90.0;
+  static const double sizeNinetyFive = 95.0;
+  static const double sizeHundred = 100.0;
 }

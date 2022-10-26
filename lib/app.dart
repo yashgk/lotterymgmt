@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:lotto_mgmt/core/constants/helpers.dart';
-import 'package:lotto_mgmt/home_page.dart';
 import 'package:lotto_mgmt/ui/authentication%20_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -9,7 +8,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      home: const HomePage(),
+      home: const AuthenticationScreen(),
       builder: (context, widget) {
         setSizeConfig(context);
         return widget!;

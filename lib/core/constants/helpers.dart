@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:lotto_mgmt/core/constants/app_colors.dart';
+import 'package:lotto_mgmt/core/constants/app_dimensions.dart';
 
 Size? size;
 
@@ -17,3 +19,10 @@ Widget hBox(double width) {
     width: width,
   );
 }
+
+OutlineInputBorder standardBorder = OutlineInputBorder(
+  borderRadius: BorderRadius.circular(AppDimensions.standardBorder),
+  borderSide: const BorderSide(
+    color: AppColors.primaryColor,
+  ),
+);
