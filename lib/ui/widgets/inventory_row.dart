@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/core/constants/app_colors.dart';
-import 'package:lotto_mgmt/core/constants/app_dimensions.dart';
-import 'package:lotto_mgmt/core/constants/app_text_styles.dart';
-import 'package:lotto_mgmt/core/constants/helpers.dart';
+import '../../core/constants/app_colors.dart';
+import '../../core/constants/app_dimensions.dart';
+import '../../core/constants/app_text_styles.dart';
+import '../../core/constants/helpers.dart';
 
 class InventoryRow extends StatefulWidget {
   final int index;
@@ -21,21 +21,14 @@ class _InventoryRowState extends State<InventoryRow> {
   @override
   Widget build(BuildContext context) {
     return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceAround,
       children: [
         SizedBox(
           width: AppDimensions.sizeEighty,
-          child: TextField(
-            readOnly: true,
-            enabled: false,
+          child: Text(
+            widget.index.toString(),
             textAlign: TextAlign.center,
             style: AppTextStyle.mediumText.copyWith(color: AppColors.onyxColor),
-            decoration: InputDecoration(
-              isDense: true,
-              hintText: widget.index.toString(),
-              border: standardBorder,
-              errorBorder: standardBorder.copyWith(
-                  borderSide: const BorderSide(color: AppColors.redAccent)),
-            ),
           ),
         ),
         hBox(AppDimensions.sizeTen),

@@ -1,5 +1,5 @@
 import 'package:flutter/cupertino.dart';
-import 'package:lotto_mgmt/core/constants/app_colors.dart';
+import 'app_colors.dart';
 
 class AppTextStyle {
 // styles in use

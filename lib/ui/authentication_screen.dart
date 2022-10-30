@@ -1,12 +1,12 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/core/constants/app_assets.dart';
-import 'package:lotto_mgmt/core/constants/app_colors.dart';
-import 'package:lotto_mgmt/core/constants/app_dimensions.dart';
-import 'package:lotto_mgmt/core/constants/app_text_styles.dart';
-import 'package:lotto_mgmt/core/constants/helpers.dart';
-import 'package:lotto_mgmt/ui/widgets/login_module.dart';
-import 'package:lotto_mgmt/ui/widgets/registration_module.dart';
+import '../core/constants/app_assets.dart';
+import '../core/constants/app_colors.dart';
+import '../core/constants/app_dimensions.dart';
+import '../core/constants/app_text_styles.dart';
+import '../core/constants/helpers.dart';
+import 'widgets/login_module.dart';
+import 'widgets/registration_module.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({Key? key}) : super(key: key);
@@ -59,7 +59,6 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                         ],
                       ),
                     ),
-                    // vBox(AppDimensions.sizeThirty),
                     const Spacer(),
                     alreadyMember
                         ? const LoginModule()

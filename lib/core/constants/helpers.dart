@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/core/constants/app_colors.dart';
-import 'package:lotto_mgmt/core/constants/app_dimensions.dart';
+import 'app_colors.dart';
+import 'app_dimensions.dart';
 
 Size? size;
 

@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/core/constants/app_colors.dart';
-import 'package:lotto_mgmt/core/constants/app_dimensions.dart';
-import 'package:lotto_mgmt/core/constants/app_text_styles.dart';
-import 'package:lotto_mgmt/core/constants/helpers.dart';
-import 'package:lotto_mgmt/ui/about_contact_us_screen.dart';
-import 'package:lotto_mgmt/ui/dashboard_screen.dart';
-import 'package:lotto_mgmt/ui/how_to_use_screen.dart';
-import 'package:lotto_mgmt/ui/lotto_ticket_inventory.dart';
-import 'package:lotto_mgmt/ui/report_screen.dart';
+import 'package:lotto_mgmt/ui/lotto_book_screen.dart';
+import 'core/constants/app_colors.dart';
+import 'core/constants/app_dimensions.dart';
+import 'core/constants/app_text_styles.dart';
+import 'core/constants/helpers.dart';
+import 'ui/about_contact_us_screen.dart';
+import 'ui/dashboard_screen.dart';
+import 'ui/how_to_use_screen.dart';
+
+import 'ui/report_screen.dart';
 
 class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
@@ -22,7 +23,7 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> contentScreenList = const [
     DashboardScreen(),
-    TicketInventoryScreen(),
+    LottoBookScreen(),
     ReportScreen(),
     HowToUseScreen(),
     AboutUsScreen(),
