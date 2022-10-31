@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/ui/lotto_book_screen.dart';
+import 'ui/lotto_book_screen.dart';
 import 'core/constants/app_colors.dart';
 import 'core/constants/app_dimensions.dart';
 import 'core/constants/app_text_styles.dart';

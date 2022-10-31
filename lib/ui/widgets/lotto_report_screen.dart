@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/core/constants/app_dimensions.dart';
-import 'package:lotto_mgmt/core/constants/app_text_styles.dart';
-import 'package:lotto_mgmt/core/constants/helpers.dart';
+import '../../core/constants/constants.dart';
 
 class LottoReportSummary extends StatefulWidget {
   const LottoReportSummary({super.key});

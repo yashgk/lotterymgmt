@@ -1,10 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/core/constants/app_text_styles.dart';
-import 'package:lotto_mgmt/ui/widgets/inventory_header.dart';
-import 'package:lotto_mgmt/ui/widgets/lotto_report_screen.dart';
-import '../../core/constants/app_dimensions.dart';
-import '../../core/constants/helpers.dart';
-import 'inventory_row.dart';
+import '../../core/constants/app_text_styles.dart';
+import 'inventory_entry_header.dart';
+import 'lotto_report_screen.dart';
+import '../../core/constants/constants.dart';
+import 'inventory_entry_row.dart';
 
 class TicketInventoryScreen extends StatefulWidget {
   const TicketInventoryScreen({Key? key}) : super(key: key);
@@ -28,7 +27,7 @@ class _TicketInventoryScreenState extends State<TicketInventoryScreen> {
                 Expanded(
                     child: Column(
                   children: [
-                    const InventoryHeader(),
+                    const InventoryEntryHeader(),
                     const Divider(
                       thickness: AppDimensions.sizeTwo,
                     ),
@@ -40,11 +39,11 @@ class _TicketInventoryScreenState extends State<TicketInventoryScreen> {
                             thickness: AppDimensions.sizeTwo,
                           );
                         },
-                        padding:
-                            const EdgeInsets.only(bottom: AppDimensions.sizeFive),
+                        padding: const EdgeInsets.only(
+                            bottom: AppDimensions.sizeFive),
                         itemCount: 25,
                         itemBuilder: (context, index) {
-                          return InventoryRow(
+                          return InventoryEntryRow(
                             index: index + 1,
                           );
                         }),
@@ -54,7 +53,7 @@ class _TicketInventoryScreenState extends State<TicketInventoryScreen> {
                 Expanded(
                   child: Column(
                     children: [
-                      const InventoryHeader(),
+                      const InventoryEntryHeader(),
                       const Divider(
                         thickness: AppDimensions.sizeTwo,
                       ),
@@ -70,7 +69,7 @@ class _TicketInventoryScreenState extends State<TicketInventoryScreen> {
                               bottom: AppDimensions.sizeFive),
                           itemCount: 25,
                           itemBuilder: (context, index) {
-                            return InventoryRow(
+                            return InventoryEntryRow(
                               index: index + 26,
                             );
                           }),

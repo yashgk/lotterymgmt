@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../core/constants/app_colors.dart';
-import '../../core/constants/app_dimensions.dart';
-import '../../core/constants/app_text_styles.dart';
-import '../../core/constants/helpers.dart';
+import '../../core/constants/constants.dart';
 import '../../home_page.dart';
 
 class LoginModule extends StatefulWidget {
