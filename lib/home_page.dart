@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'ui/lotto_book_screen.dart';
+import 'package:lotto_mgmt/ui/widgets/lotto_report_screen.dart';
+
 import 'core/constants/app_colors.dart';
 import 'core/constants/app_dimensions.dart';
 import 'core/constants/app_text_styles.dart';
@@ -7,7 +8,6 @@ import 'core/constants/helpers.dart';
 import 'ui/about_contact_us_screen.dart';
 import 'ui/dashboard_screen.dart';
 import 'ui/how_to_use_screen.dart';
-
 import 'ui/report_screen.dart';
 
 class HomePage extends StatefulWidget {
@@ -23,7 +23,8 @@ class _HomePageState extends State<HomePage> {
 
   List<Widget> contentScreenList = const [
     DashboardScreen(),
-    LottoBookScreen(),
+    // LottoBookScreen(),
+    LottoReportSummary(),
     ReportScreen(),
     HowToUseScreen(),
     AboutUsScreen(),
