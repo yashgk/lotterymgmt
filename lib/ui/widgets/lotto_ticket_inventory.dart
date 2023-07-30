@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import '../../core/constants/app_text_styles.dart';
 import 'inventory_entry_header.dart';
 import 'lotto_report_screen.dart';
 import '../../core/constants/constants.dart';

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../core/constants/constants.dart';
-import '../../home_page.dart';
+import '../pages/home_page.dart';
 
 class LoginModule extends StatefulWidget {
   const LoginModule({Key? key}) : super(key: key);

@@ -1,20 +1,17 @@
-import 'dart:html';
-
 import 'package:flutter/material.dart';
-import '../core/constants/app_dimensions.dart';
-import '../core/constants/app_text_styles.dart';
-import '../core/constants/helpers.dart';
-import 'widgets/lotto_book_entry_header.dart';
-import 'widgets/lotto_ticket_inventory.dart';
+import '../../core/constants/app_dimensions.dart';
+import '../../core/constants/app_text_styles.dart';
+import '../../core/constants/helpers.dart';
+import '../widgets/lotto_ticket_inventory.dart';
 
-class LottoBookScreen extends StatefulWidget {
-  const LottoBookScreen({super.key});
+class ReportScreen extends StatefulWidget {
+  const ReportScreen({super.key});
 
   @override
-  State<LottoBookScreen> createState() => _LottoBookScreenState();
+  State<ReportScreen> createState() => _ReportScreenState();
 }
 
-class _LottoBookScreenState extends State<LottoBookScreen> {
+class _ReportScreenState extends State<ReportScreen> {
   DateTime selectedDate = DateTime.now();
   bool isBookReport = false;
   @override
@@ -24,8 +21,8 @@ class _LottoBookScreenState extends State<LottoBookScreen> {
         return MaterialPageRoute(
           builder: (context) => Card(
             child: Column(
+              crossAxisAlignment: CrossAxisAlignment.end,
               children: [
-                const LottoBookEntryHeader(),
                 ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     minimumSize: Size(
@@ -45,11 +42,7 @@ class _LottoBookScreenState extends State<LottoBookScreen> {
                         selectedDate = picked;
                       });
                       if (mounted) {
-                        Navigator.push(
-                            context,
-                            MaterialPageRoute(
-                                builder: (context) =>
-                                    const TicketInventoryScreen()));
+                        Navigator.push(context, MaterialPageRoute(builder: (context) => const TicketInventoryScreen()));
                       }
                     }
                   },

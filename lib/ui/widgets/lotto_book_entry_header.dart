@@ -7,11 +7,11 @@ class LottoBookEntryHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(vertical: AppDimensions.sizeTen),
+    return const Padding(
+      padding:  EdgeInsets.symmetric(vertical: AppDimensions.sizeTen),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: const [
+        children:  [
           HeaderBuilder(title: "ACTION",),
           HeaderBuilder(title: "DATE",),
           HeaderBuilder(title: "YTD'S INV.",),
