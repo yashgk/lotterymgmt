@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:lotto_mgmt/core/constants/shared_prefs.dart';
+import 'package:lotto_mgmt/ui/auth/authentication_screen.dart';
+import 'package:lotto_mgmt/ui/pages/login_success.dart';
 import 'package:lotto_mgmt/ui/pages/report_screen.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_dimensions.dart';
@@ -51,8 +54,13 @@ class _HomePageState extends State<HomePage> {
           ),
           Center(
             child: GestureDetector(
-              onTap: () {
+              onTap: () async {
                 //log out user
+                await SharedPreference.remove(SharedPreference.kToken);
+                Navigator.of(context).pushAndRemoveUntil(
+                  MaterialPageRoute(builder: (context) => const AuthenticationScreen()),
+                  (route) => false,
+                );
               },
               child: const Text("Log Out"),
             ),
@@ -60,7 +68,7 @@ class _HomePageState extends State<HomePage> {
           hBox(AppDimensions.sizeFifteen)
         ],
       ),
-      body: const ReportScreen(),
+      body: const LoginSuccess(),
     );
   }
 }

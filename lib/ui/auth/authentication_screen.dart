@@ -8,8 +8,6 @@ import '../../core/constants/helpers.dart';
 import 'login_module.dart';
 import 'registration_module.dart';
 
-
-
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({Key? key}) : super(key: key);
 
@@ -29,6 +27,15 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
+              Container(
+                width: size!.width / 2,
+                color: AppColors.secondaryColor,
+                child: Image.asset(
+                  AppAssets.lotteryStock,
+                  height: size!.height * 0.6,
+                  width: size!.width * 0.6,
+                ),
+              ),
               SizedBox(
                 width: size!.width / 2,
                 child: Column(
@@ -40,11 +47,10 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                         crossAxisAlignment: CrossAxisAlignment.end,
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Placeholder(
-                            color: AppColors.primaryColor,
-                            strokeWidth: 2,
-                            fallbackHeight: size!.height * 0.15,
-                            fallbackWidth: size!.width * 0.1,
+                          Image.asset(
+                            AppAssets.lotteryLogo,
+                            height: size!.height * 0.15,
+                            width: size!.width * 0.1,
                           ),
                           hBox(AppDimensions.sizeThirty),
                           SizedBox(
@@ -79,33 +85,21 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                             ]),
                           )
                         : RichText(
-                            text: TextSpan(
-                                text: "Already Have an Account ? ",
-                                style: AppTextStyle.mediumText.copyWith(color: AppColors.onyxColor),
-                                children: [
-                                  TextSpan(
-                                    text: "Login",
-                                    style: AppTextStyle.mediumText.copyWith(color: AppColors.primaryColor),
-                                    recognizer: TapGestureRecognizer()
-                                      ..onTap = () {
-                                        setState(() {
-                                          alreadyMember = !alreadyMember;
-                                        });
-                                      },
-                                  )
-                                ]),
+                            text: TextSpan(text: "Already Have an Account ? ", style: AppTextStyle.mediumText.copyWith(color: AppColors.onyxColor), children: [
+                              TextSpan(
+                                text: "Login",
+                                style: AppTextStyle.mediumText.copyWith(color: AppColors.primaryColor),
+                                recognizer: TapGestureRecognizer()
+                                  ..onTap = () {
+                                    setState(() {
+                                      alreadyMember = !alreadyMember;
+                                    });
+                                  },
+                              )
+                            ]),
                           ),
                     const Spacer(),
                   ],
-                ),
-              ),
-              Container(
-                width: size!.width / 2,
-                color: AppColors.secondaryColor,
-                child: Image.asset(
-                  AppAssets.lotteryStock,
-                  height: size!.height * 0.6,
-                  width: size!.width * 0.6,
                 ),
               ),
             ],
