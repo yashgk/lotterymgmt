@@ -1,14 +1,11 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import '../../core/constants/app_assets.dart';
 import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_dimensions.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../../core/constants/helpers.dart';
 import 'login_module.dart';
 import 'registration_module.dart';
-
-
 
 class AuthenticationScreen extends StatefulWidget {
   const AuthenticationScreen({Key? key}) : super(key: key);
@@ -30,7 +27,7 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
               SizedBox(
-                width: size!.width / 2,
+                width: size!.width,
                 child: Column(
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
@@ -62,30 +59,39 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                       ),
                     ),
                     const Spacer(),
-                    alreadyMember ? const LoginModule() : const RegistrationModule(),
+                    alreadyMember
+                        ? const LoginModule()
+                        : const RegistrationModule(),
                     alreadyMember
                         ? RichText(
-                            text: TextSpan(text: "New Here ? ", style: AppTextStyle.mediumText.copyWith(color: AppColors.onyxColor), children: [
-                              TextSpan(
-                                text: "Create an Account",
-                                style: AppTextStyle.mediumText.copyWith(color: AppColors.primaryColor),
-                                recognizer: TapGestureRecognizer()
-                                  ..onTap = () {
-                                    setState(() {
-                                      alreadyMember = !alreadyMember;
-                                    });
-                                  },
-                              )
-                            ]),
+                            text: TextSpan(
+                                text: "New Here ? ",
+                                style: AppTextStyle.mediumText
+                                    .copyWith(color: AppColors.onyxColor),
+                                children: [
+                                  TextSpan(
+                                    text: "Create an Account",
+                                    style: AppTextStyle.mediumText.copyWith(
+                                        color: AppColors.primaryColor),
+                                    recognizer: TapGestureRecognizer()
+                                      ..onTap = () {
+                                        setState(() {
+                                          alreadyMember = !alreadyMember;
+                                        });
+                                      },
+                                  )
+                                ]),
                           )
                         : RichText(
                             text: TextSpan(
                                 text: "Already Have an Account ? ",
-                                style: AppTextStyle.mediumText.copyWith(color: AppColors.onyxColor),
+                                style: AppTextStyle.mediumText
+                                    .copyWith(color: AppColors.onyxColor),
                                 children: [
                                   TextSpan(
                                     text: "Login",
-                                    style: AppTextStyle.mediumText.copyWith(color: AppColors.primaryColor),
+                                    style: AppTextStyle.mediumText.copyWith(
+                                        color: AppColors.primaryColor),
                                     recognizer: TapGestureRecognizer()
                                       ..onTap = () {
                                         setState(() {
@@ -99,15 +105,15 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
                   ],
                 ),
               ),
-              Container(
-                width: size!.width / 2,
-                color: AppColors.secondaryColor,
-                child: Image.asset(
-                  AppAssets.lotteryStock,
-                  height: size!.height * 0.6,
-                  width: size!.width * 0.6,
-                ),
-              ),
+              // Container(
+              //   width: size!.width / 2,
+              //   color: AppColors.secondaryColor,
+              //   child: Image.asset(
+              //     AppAssets.lotteryStock,
+              //     height: size!.height * 0.6,
+              //     width: size!.width * 0.6,
+              //   ),
+              // ),
             ],
           )),
     );

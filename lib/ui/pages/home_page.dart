@@ -1,66 +1,59 @@
 import 'package:flutter/material.dart';
-import 'package:lotto_mgmt/ui/pages/report_screen.dart';
-import '../../core/constants/app_colors.dart';
 import '../../core/constants/app_dimensions.dart';
 import '../../core/constants/app_text_styles.dart';
 import '../../core/constants/helpers.dart';
+import '../widgets/lotto_ticket_inventory.dart';
 
 class HomePage extends StatefulWidget {
-  const HomePage({Key? key}) : super(key: key);
+  const HomePage({super.key});
 
   @override
   State<HomePage> createState() => _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  int selectedDestIndex = 0;
-  PageController contentController = PageController(initialPage: 0);
-
-  List<Widget> contentScreenList = const [
-    // LottoReportSummary(),
-
-    // HowToUseScreen(),
-    // AboutUsScreen(),
-  ];
+  DateTime selectedDate = DateTime.now();
+  bool isBookReport = false;
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        elevation: AppDimensions.sizeZero,
-        backgroundColor: AppColors.primaryColor,
-        title: const Text(
-          "Lottery Management",
-          style: AppTextStyle.largeText,
-        ),
-        actions: [
-          GestureDetector(
-            onTap: () {},
-            child: SizedBox(
-              width: AppDimensions.sizeHundred,
-              child: Row(
-                children: [
-                  const Text(
-                    "Jon",
-                    style: AppTextStyle.mediumText,
-                  ),
-                  hBox(AppDimensions.sizeFive),
-                  const Icon(Icons.account_circle_outlined),
-                ],
+    return Card(
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.end,
+        children: [
+          ElevatedButton(
+            style: ElevatedButton.styleFrom(
+              minimumSize: Size(
+                size!.width * 0.2,
+                AppDimensions.sizeFifty,
               ),
             ),
-          ),
-          Center(
-            child: GestureDetector(
-              onTap: () {
-                //log out user
-              },
-              child: const Text("Log Out"),
+            onPressed: () async {
+              final DateTime? picked = await showDatePicker(
+                context: context,
+                initialDate: selectedDate,
+                firstDate: DateTime(2000),
+                lastDate: DateTime(2025),
+              );
+              if (picked != null && picked != selectedDate) {
+                setState(() {
+                  selectedDate = picked;
+                });
+
+                if (mounted) {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const TicketInventoryScreen()));
+                }
+              }
+            },
+            child: const Text(
+              "+ ADD ENTRY",
+              style: AppTextStyle.mediumText,
             ),
           ),
-          hBox(AppDimensions.sizeFifteen)
         ],
       ),
-      body: const ReportScreen(),
     );
   }
 }
